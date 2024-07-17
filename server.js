@@ -63,12 +63,14 @@ connectToDatabase();
 mongoose.connect(process.env.atlasuri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    tls: true,
+    tlsAllowInvalidCertificates: false,
+    tlsCAFile: process.env.CA_CERT_PATH, // Optional: Path to CA certificate
 }).then(() => {
     console.log('Connected to MongoDB Atlas');
 }).catch((error) => {
     console.error('Error connecting to MongoDB Atlas', error);
 });
-
 app.get('/', async (req, res) => {
     try {
         const database = client.db('EventDB');
