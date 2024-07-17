@@ -42,8 +42,8 @@ app.use('/Javascript', express.static(path.join(__dirname, 'Javascript')));
 app.use('/Images', express.static(path.join(__dirname, 'Images')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-const client = new MongoClient(process.env.atlasuri, { useNewUrlParser: true, useUnifiedTopology: true });
-
+const client = new MongoClient(process.env.atlasuri, { useNewUrlParser: true, useUnifiedTopology: true,tls: true,
+    tlsAllowInvalidCertificates: false });
 async function connectToDatabase() {
     try {
         await client.connect();
