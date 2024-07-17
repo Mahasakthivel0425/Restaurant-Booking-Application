@@ -67,7 +67,7 @@ mongoose.connect(process.env.atlasuri, {
 app.get('/', async (req, res) => {
     try {
         const database = client.db('EventDB');
-        const collection = database.collection('your_collection_name');
+        const collection = database.collection('test');
         const documents = await collection.find({}).toArray();
         res.status(200).json(documents);
     } catch (error) {
