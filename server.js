@@ -46,8 +46,7 @@ const client = new MongoClient(process.env.atlasuri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     tls: true,
-    tlsAllowInvalidCertificates: false,
-    tlsCAFile: process.env.CA_CERT_PATH, // Optional: Path to CA certificate
+    tlsAllowInvalidCertificates: false
 });
 async function connectToDatabase() {
     try {
