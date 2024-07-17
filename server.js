@@ -42,8 +42,7 @@ app.use('/Javascript', express.static(path.join(__dirname, 'Javascript')));
 app.use('/Images', express.static(path.join(__dirname, 'Images')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-const client = new MongoClient("mongodb+srv://mahasakthivel0425:V.1.j.a.y@eventdb.81tqo59.mongodb.net/?retryWrites=true&w=majority&appName=EventDB
-", { useNewUrlParser: true, useUnifiedTopology: true,tls: true,
+const client = new MongoClient(process.env.atlasuri, { useNewUrlParser: true, useUnifiedTopology: true,tls: true,
     tlsAllowInvalidCertificates: false });
 async function connectToDatabase() {
     try {
