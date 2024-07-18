@@ -227,15 +227,15 @@ app.get('/logout', (req, res) => {
 });
 
 // Express routes
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,index.html'));
+app.get('/index.html', (req, res) => {
+    res.sendFile(path.join(__dirname,'HTML','index.html'));
 });
 
 app.get('/HTML/about.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'HTML', 'about.html'));
 });
 
-app.get('/index.html', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
