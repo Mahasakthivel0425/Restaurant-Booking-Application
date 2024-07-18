@@ -138,7 +138,7 @@ const Registration = mongoose.model('Registration', registrationSchema);
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://${port}/auth/google/callback",
+    callbackURL: "https://restaurant-booking-application.onrender.com/auth/google/callback",
     passReqToCallback: true,
     prompt: 'consent' // Ensure the consent screen is shown
 },
