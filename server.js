@@ -243,7 +243,7 @@ app.get('/HTML/contact.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'HTML', 'contact.html'));
 });
 
-app.get('/HTML/Register.html', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'HTML', 'Register.html'));
 });
 
