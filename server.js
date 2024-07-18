@@ -70,17 +70,7 @@ mongoose.connect(process.env.atlasuri, {
 }).catch((error) => {
     console.error('Error connecting to MongoDB Atlas', error);
 });
-app.get('/', async (req, res) => {
-    try {
-        const database = client.db('EventDB');
-        const collection = database.collection('test');
-        const documents = await collection.find({}).toArray();
-        res.status(200).json(documents);
-    } catch (error) {
-        console.error('Error fetching documents:', error);
-        res.status(500).send('Error fetching documents');
-    }
-});
+
 // Multer configuration for file uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
