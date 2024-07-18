@@ -217,7 +217,7 @@ app.get('/logout', (req, res) => {
 });
 
 // Express routes
-app.get('/index.html', (req, res) => {
+app.get('/HTML/index.html', (req, res) => {
     res.sendFile(path.join(__dirname,'HTML','index.html'));
 });
 
@@ -233,7 +233,7 @@ app.get('/HTML/contact.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'HTML', 'contact.html'));
 });
 
-app.get('/', (req, res) => {
+app.get('/HTML/register.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'HTML', 'Register.html'));
 });
 
